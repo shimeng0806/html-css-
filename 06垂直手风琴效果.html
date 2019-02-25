@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css3实现垂直手风琴效果</title>
+	<!-- 知识点： 
+		1，背景渐变效果background: linear-gradient(#fff, #000);
+		2，CSS实现小三角：border-top: 5px solid red; border-left: 5px solid rgba(0,0,0,0); border-right: 5px solid rgba(0,0,0,0); 					border-bottom: 5px solid rgba(0,0,0,0);
+			也能透明显示------border-bottom: 5px solid transparent;
+		3，超出隐藏，显示滚动条	overflow: auto;
+		4，触发活动窗口的一个伪类选择器 :target p {};
+	-->
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.box {
+			width: 500px;
+			margin: 50px auto;
+		}
+		.box .box_text {
+			position: relative;
+		}
+		.box .box_text:target p {
+			height: 100px;
+		}
+		.box .box_text:target a{
+			background: linear-gradient(#6bb2ff, #2288dd);
+		}
+		.box .box_text:target span {
+			border-left: 5px solid white;
+			border-right: 5px solid transparent;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid rgba(0, 0, 0, 0);
+			top: 12px;
+			right: 5px;
+		}
+		.box a {
+			display: block;
+			height: 35px;
+			background: linear-gradient(#cecece, #8f8f8f);
+			padding-left: 12px;
+			line-height: 35px;
+			font-size: 18px;
+			border-radius: 5px;
+			text-decoration: none;
+		}
+		.box a:hover {
+			background: linear-gradient(#6bb2ff, #2288dd);
+		}
+		.box p {
+			height: 0;
+			overflow: auto;
+			padding-left: 10px;
+			margin: 5px 0;
+		}
+		.box span {
+			width: 0;
+			height: 0;
+			border-top: 5px solid white;
+			border-right: 5px solid transparent;
+			border-left: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			position: absolute;
+			top: 15px;
+			right: 15px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box_text" id="top">
+			<a href="#top">灭绝的里海马</a>
+			<p>一度被认为已灭绝的里海马。里海马只是个头较小，其他特征与普通马没有太大区别。这种马曾经是古波斯国王的宠儿，消失在人们视线中的时间超过1000年。在经过DNA检测并确定血统之后，弗鲁兹启动了一项繁育计划，试图挽救里海马的命运。虽然混乱的伊朗政局让这项工作面临巨大难度，但弗鲁兹最终取得成功。截止2012年2月，里海马的数量仍旧较为稀少，我们可以在美国、欧洲、新西兰和澳大利亚的一些地区看到它们的身影。
+			</p>
+			<span></span>
+		</div>
+		<div class="box_text" id="center">
+			<a href="#center">灭绝的里海马</a>
+			<p>一度被认为已灭绝的里海马。里海马只是个头较小，其他特征与普通马没有太大区别。这种马曾经是古波斯国王的宠儿，消失在人们视线中的时间超过1000年。在经过DNA检测并确定血统之后，弗鲁兹启动了一项繁育计划，试图挽救里海马的命运。虽然混乱的伊朗政局让这项工作面临巨大难度，但弗鲁兹最终取得成功。截止2012年2月，里海马的数量仍旧较为稀少，我们可以在美国、欧洲、新西兰和澳大利亚的一些地区看到它们的身影。
+			</p>
+			<span></span>
+		</div>
+		<div class="box_text" id="bottom">
+			<a href="#bottom">灭绝的里海马</a>
+			<p>一度被认为已灭绝的里海马。里海马只是个头较小，其他特征与普通马没有太大区别。这种马曾经是古波斯国王的宠儿，消失在人们视线中的时间超过1000年。在经过DNA检测并确定血统之后，弗鲁兹启动了一项繁育计划，试图挽救里海马的命运。虽然混乱的伊朗政局让这项工作面临巨大难度，但弗鲁兹最终取得成功。截止2012年2月，里海马的数量仍旧较为稀少，我们可以在美国、欧洲、新西兰和澳大利亚的一些地区看到它们的身影。
+			</p>
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

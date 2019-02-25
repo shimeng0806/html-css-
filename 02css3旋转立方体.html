@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>css3旋转立方体</title>
+	<style type="text/css">
+	/*
+	思路：
+		1.定位
+		2.移动物体位置： transform: translate 平移; rotate旋转 
+		3.3D场景的设置：
+			transform-style: preserve-3d; 添加所有变形元素的父元素上。 perpective: 1200px;景深大小
+		4.动画animation 动画的行动轨迹写在@keyframes里面
+
+	*/
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		list-style: none;
+	}
+	.box {
+		width: 600px;
+		height: 600px;
+		margin: 20px auto;
+		border: 3px solid red;
+		perspective: 1200px;
+	}
+	.box ul {
+		width: 400px;
+		height: 400px;
+		border: 2px solid #000;
+		margin: 100px;
+		position: relative;
+		transform-style: preserve-3d;
+		/*引用动画*/
+		animation: move 2s infinite linear;
+		/*改变旋转盒子的中心*/
+		transform-origin: center center 200px;
+	}
+	.box ul li {
+		width: 400px;
+		height: 400px;
+		font-size: 36px;
+		line-height:400px;
+		text-align: center;
+		opacity: 0.5;
+		position: absolute;
+	}
+	.box ul li:nth-child(2) {
+		background-color: pink;
+		transform: translateX(400px);
+		transform: rotateY(90deg);
+		transform-origin: right;
+	}
+	.box ul li:nth-child(3) {
+		background-color: red;
+		transform: translateX(-400px);
+		transform: rotateY(-90deg);
+		transform-origin: left;
+	}
+	.box ul li:nth-child(4) {
+		background-color: blue;
+		transform: translateY(400px);
+		transform: rotateX(-90deg);
+		transform-origin: bottom;
+	}
+	.box ul li:nth-child(5) {
+		background-color: yellow;
+		transform: translateY(-400px);
+		transform: rotateX(90deg);
+		transform-origin: top;
+
+	}
+	.box ul li:nth-child(6) {
+		background-color: peru;
+		transform: translateZ(400px);
+	}
+	.box ul li:nth-child(1) {
+		background-color: green;
+	}
+
+
+/*定义动画*/
+	@keyframes move {
+		0% {
+			transform: rotateY(0deg);
+		}
+		100% {
+			transform: rotateY(360deg);
+		}
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>

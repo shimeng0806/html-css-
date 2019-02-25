@@ -1,0 +1,97 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8" />
+	<title>锚点轮播图</title>
+	<!-- 思路：
+			1，设置锚点
+			2,定位
+			3，给父元素设置宽高，超出隐藏overflow: hidden;
+
+	 -->
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+		}
+		.box {
+			width: 500px;
+			height: 375px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			position: relative;
+			
+		}
+		.box li {
+			width: 500px;
+			height: 375px;
+		}
+		.box ul {
+			width: 500px;
+			height: 375px;
+			overflow: hidden;
+		}
+		.box li:nth-child(1) {
+			background-color: red;
+		}
+		.box li:nth-child(2) {
+			background-color: green;
+		}
+		.box li:nth-child(3) {
+			background-color: blue;
+		}
+		.box li:nth-child(4) {
+			background-color: yellow;
+		}
+		.box li:nth-child(5) {
+			background-color: pink;
+		}
+		.box div {
+			width: 120px;
+			height: 20px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+		.box div a {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: rgba(0, 0, 0, 0.5);
+			text-align: center;
+			line-height: 20px;
+			padding: 0;
+		}
+
+
+
+	</style>
+	
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li id="img1"></li>
+			<li id="img2"></li>
+			<li id="img3"></li>
+			<li id="img4"></li>
+			<li id="img5"></li>
+		</ul>
+		<div>
+			<a href="#img1">1</a>
+			<a href="#img2">2</a>
+			<a href="#img3">3</a>
+			<a href="#img4">4</a>
+			<a href="#img5">5</a>
+		</div>
+	</div>
+
+</body>
+</html>

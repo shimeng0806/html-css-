@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+	<!-- 思路：
+		1，定位
+		2，旋转中心点transform-origin: center bottom;
+		3，盒子阴影box-shadow: 3px 3px 3px rgba();和透明度opacity: 0;
+
+
+	 -->
+	<meta charset="UTF-8">
+	<title>css3实现折扇效果</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.box {
+			width: 600px;
+			height: 230px;
+			border-bottom: 2px solid #000;
+			margin: 100px auto;
+			position: relative;
+		}
+		.box li {
+			width: 60px;
+			height: 200px;
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -30px;
+			transition: all 0.8s;
+			transform-origin: center bottom;
+			opacity: 0;
+		}
+		.box li:nth-child(1) {
+			background-color: red;
+			opacity: 1;
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+		}
+		.box li:nth-child(2) {
+			background-color: yellow;
+		}
+		.box li:nth-child(3) {
+			background-color: green;
+		}
+		.box li:nth-child(4) {
+			background-color: pink;
+		}
+		.box li:nth-child(5) {
+			background-color: blue;
+		}
+		.box li:nth-child(6) {
+			background-color: #000;
+		}
+		.box li:nth-child(7) {
+			background-color: yellowgreen;
+		}
+		.box li:nth-child(8) {
+			background-color: yellowgreen;
+		}
+		.box li:nth-child(9) {
+			background-color: #000;
+		}
+		.box li:nth-child(10) {
+			background-color: blue;
+		}
+		.box li:nth-child(11) {
+			background-color: pink;
+		}
+		.box li:nth-child(12) {
+			background-color: green;
+		}
+		.box li:nth-child(13) {
+			background-color: yellow;
+		}
+		.box:hover li {
+			opacity: 1;
+		}
+		.box:hover li:nth-child(2){
+			transform: rotate(15deg);
+		}
+		.box:hover li:nth-child(3){
+			transform: rotate(30deg);
+		}
+		.box:hover li:nth-child(4){
+			transform: rotate(45deg);
+		}
+		.box:hover li:nth-child(5){
+			transform: rotate(60deg);
+		}
+		.box:hover li:nth-child(6){
+			transform: rotate(75deg);
+		}
+		.box:hover li:nth-child(7){
+			transform: rotate(90deg);
+		}
+		.box:hover li:nth-child(8){
+			transform: rotate(-90deg);
+		}
+		.box:hover li:nth-child(9){
+			transform: rotate(-75deg);
+		}
+		.box:hover li:nth-child(10){
+			transform: rotate(-60deg);
+		}
+		.box:hover li:nth-child(11){
+			transform: rotate(-45deg);
+		}
+		.box:hover li:nth-child(12){
+			transform: rotate(-30deg);
+		}
+		.box:hover li:nth-child(13){
+			transform: rotate(-15deg);
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>7</li>
+			<li>6</li>
+			<li>5</li>
+			<li>4</li>
+			<li>3</li>
+			<li>2</li>
+		</ul>
+	</div>
+	
+</body>
+</html>
